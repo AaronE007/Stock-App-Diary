@@ -1,5 +1,6 @@
 class StocksController < ApplicationController
-  before_action authorize :find_stock, only: [:update, :destroy, :show]
+  skip_before_action :authorize, only: [:index]
+
 
   def index
     render json: Stock.all  
@@ -35,9 +36,9 @@ class StocksController < ApplicationController
 
   private 
 
-  def find_stock 
-    @stock = Stock.find(params[:id])
-  end 
+  # def find_stock 
+  #   @stock = Stock.find(params[:id])
+  # end 
 
   def stock_params
     params.require(:stock).permit(:name, :price_purchased_at, :number, :info)
