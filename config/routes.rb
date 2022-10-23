@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :stocks
   resources :companies, only: [:index, :create]
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
