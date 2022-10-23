@@ -5,7 +5,7 @@ const CompaniesContainer = () => {
     const [companies, setCompanies] = useState([])
 
     useEffect(() => {
-      fetch("/api/v1/posts")
+      fetch('/companies')
       .then(r => r.json())
       .then(data => setCompanies(data.data.map(c => c.attributes)))
   }, []);
@@ -13,7 +13,7 @@ const CompaniesContainer = () => {
   return (
     <div>
       <h2>Companies</h2>
-      <CompaniesList>companies={companies}</CompaniesList>
+      <CompaniesList companies={companies}/>
     </div>
   )
 

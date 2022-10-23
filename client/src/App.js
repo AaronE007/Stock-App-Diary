@@ -3,8 +3,9 @@ import {Routes, Route  } from "react-router-dom";
 import './App.css';
 import Navbar from "./Navbar";
 import Home from "./Home";
-import LoginForm from "./LoginForm";
+import LoginForm from "./components/LoginForm";
 import SignUpForm from "./SignUpForm";
+import CompaniesContainer from "./containers/CompaniesContainer";
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginForm/>} />
           <Route path="/signup" element={<SignUpForm/>} />
-          <Route path="/signup" element={<CompanyContainer/>} />
+          <Route path="/" element={<CompaniesContainer/>} />
 
         </Routes>
       
