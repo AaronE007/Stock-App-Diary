@@ -1,10 +1,10 @@
 import React from "react";
 import {Routes, Route  } from "react-router-dom";
 import './App.css';
-import Navbar from "./Navbar";
-import Home from "./Home";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
-import SignUpForm from "./SignUpForm";
+import SignUpForm from "./components/SignUpForm";
 import CompaniesContainer from "./containers/CompaniesContainer";
 
 

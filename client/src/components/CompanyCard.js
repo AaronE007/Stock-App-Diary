@@ -4,9 +4,9 @@ const CompanyCard = ({company}) => {
   return (
  
   <div style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 600, width:600, color: "gold"}}>
-    <h3>Name: {restaurant.name}</h3>
+    <h3>Name: {company.name}</h3>
     <br/>
-    <h4>Slogan {restaurant.slogan}</h4>
+    <h4>Description: {company.description}</h4>
   </div>
 
    
