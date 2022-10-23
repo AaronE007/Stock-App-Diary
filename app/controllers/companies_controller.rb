@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  skip_before_action :authorized, only: [:index]
+  skip_before_action :authorize, only: [:index]
   
   def create
     company = Company.create!(companies_params)

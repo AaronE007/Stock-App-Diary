@@ -20,7 +20,7 @@ const Navbar = () => {
       <div>
         <h1>Hello {user.username}</h1>
         <br/>
-        <Link  to="/">Home</Link>
+        <Link  to="/companies">Companies</Link>
         <br/>
         <button onClick={userLogout}> Logout here</button>
       </div>
