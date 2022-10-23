@@ -1,4 +1,4 @@
-import React,{ useState, useContext} from "react";
+import React,{ useState, useContext } from "react";
 import {UserContext} from "./context/user";
 import {useNavigate} from "react-router-dom"
 
@@ -8,6 +8,7 @@ import {useNavigate} from "react-router-dom"
 const SignUpForm = () => {
   const {signup} = useContext(UserContext)
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [bio, setBio] = useState("");
@@ -18,15 +19,16 @@ const SignUpForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"},
         body: JSON.stringify({
-          username: username,
-          password: password,
-          password_confirmation: passwordConfirmation,
-          bio: bio
+          username,
+          email,
+          password,
+          password_confirmation:  passwordConfirmation,
+          bio,
         })
      })
      .then(res => res.json())
@@ -40,13 +42,17 @@ const SignUpForm = () => {
         }
      } )
   
-    }
+ }
 
   return (
     <div>
     <form onSubmit={handleSubmit}>
       <label>Username: </label>
       <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required/>
+        <br/>
+        <br/>
+      <label>Email: </label>
+      <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
         <br/>
         <br/>
       <label>Password: </label>
@@ -63,8 +69,8 @@ const SignUpForm = () => {
         <br/>
       <input type="submit" value="Add User" />
     </form>
-    <ul>
-      {errors}
+      <ul>
+    {errors}
     </ul>
   </div>
   )
