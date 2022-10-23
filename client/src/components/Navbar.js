@@ -5,7 +5,7 @@ import { UserContext } from '../context/user'
 
 const Navbar = () => {
 
-  const {user, logout} = useContext(UserContext)
+  const {user, logout, loggedIn} = useContext(UserContext)
   
 
   const userLogout = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
     })
   }
 
-  if(user){
+  if(loggedIn){
     return (
       <div>
         <h1>Hello {user.username}</h1>

@@ -1,6 +1,11 @@
 import React from 'react'
 
-const StockContainer = () => {
+const StocksContainer = () => {
+
+  
+
+
+
   return (
     <div>
       
@@ -8,4 +13,4 @@ const StockContainer = () => {
   )
 }
 
-export default StockContainer
+export default StocksContainer

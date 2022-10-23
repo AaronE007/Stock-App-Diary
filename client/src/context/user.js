@@ -4,37 +4,66 @@ const UserContext = React.createContext();
 
 
 function UserProvider({ children }) {
-  const [user, setUser] = useState(null);
-//  const [loggedin, setLoggedIn] = useContext(false)
+  const [user, setUser] = useState({});
+  const[stocks, setStocks] = useState([])
+  const [loggedIn, setLoggedIn] = useState([])
+
+
 
   useEffect(() => {
     fetch('/me')
     .then(res => res.json())
     .then(data => {
-      setUser(data)
-      // data.error ? setLoggedIn(false) : setLoggedIn(true)
+      setUser(data) 
+        if (data.error) {
+        setLoggedIn(false)
+        fetchStocks(null)
+      }else {
+        setLoggedIn(true)
+        fetchStocks()
+      }
     })
   }, [])
 
+  const fetchStocks = () => {
+    fetch('/stocks')
+    .then(res => res.json())
+    .then(data => {
+      setStocks(stocks)
+    })
+  }
+
+  const addStock = (stock) => {
+    fetch('/stocks', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(stock)
+    })
+    .then(res => res.json())
+    .then(data => {
+      setStocks([...stocks, data])
+    })
+  }
+
   const login = (user) => {
     setUser(user)
-    // setLoggedIn(true)
+    setLoggedIn(true)
   }
 
   const logout = (user) => {
     setUser(null)
-  //  setLoggedIn(false)
+    setLoggedIn(false)
   }
 
   const signup = (user) => {
     setUser(user)
-  //  setLoggedIn(true)
-  }
+    setLoggedIn(true)
+   }
 
 
 
   return (
-    <UserContext.Provider value={{user, login, logout, signup}}>
+    <UserContext.Provider value={{user, stocks, login, logout, signup, addStock,loggedIn}}>
       {children}
     </UserContext.Provider>
   )
