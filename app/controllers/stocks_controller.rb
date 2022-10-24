@@ -1,9 +1,7 @@
 class StocksController < ApplicationController
-  skip_before_action :authorize, only: [:index]
-
 
   def index
-    render json: Stock.all  
+    render json: @current_user.stocks
   end 
 
   def create

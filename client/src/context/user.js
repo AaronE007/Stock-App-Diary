@@ -6,6 +6,7 @@ const UserContext = React.createContext();
 function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const[stocks, setStocks] = useState([])
+  const [companies, setCompanies] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
 
 
@@ -18,19 +19,27 @@ function UserProvider({ children }) {
         if (data.error) {
         setLoggedIn(false)
         fetchStocks(null)
+        fetchCompanies(null)
       }else {
         setLoggedIn(true)
         fetchStocks()
+        fetchCompanies()
       }
     })
   }, [])
 
+
+  const fetchCompanies = () =>{
+    fetch('/companies')
+    .then((r) => r.json())
+    .then(data => setCompanies(data))
+  }
+
+
   const fetchStocks = () => {
     fetch('/stocks')
     .then(res => res.json())
-    .then(data => {
-      setStocks(data)
-    })
+    .then(data => setStocks(data))
   }
 
   const addStock = (stock) => {
@@ -63,7 +72,7 @@ function UserProvider({ children }) {
 
 
   return (
-    <UserContext.Provider value={{user, stocks, login, logout, signup, addStock,loggedIn}}>
+    <UserContext.Provider value={{user, companies, stocks, login, logout, signup, addStock,loggedIn}}>
       {children}
     </UserContext.Provider>
   )

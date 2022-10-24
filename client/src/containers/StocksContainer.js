@@ -5,7 +5,7 @@ import StocksList from '../components/StocksList'
 const StocksContainer = () => {
 
   const {stocks} = useContext(UserContext)
-
+  
 
 
   return (
