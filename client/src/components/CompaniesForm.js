@@ -13,14 +13,14 @@ const CompaniesForm = () => {
     <h2>Add Company</h2>
       <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 300, width: 400, color: "gold"}}>
           <label>Name: </label>
-          <input onChange={handleChange} type="text" name="name" value={company.name} required/>
-          <br/>
-          <br/>
+          <input type="text" id="username" value={username} onChange={(e) => setName(e.target.value)} required/>
+            <br/>
+            <br/>
           <label>Description: </label>
-          <input onChange={handleChange} type="text" name="description" value={company.description} required/>
-          <br/>
-          <br/>
-          <input type="submit" value="Add Restaurant!" />
+          <input type="text" id="email" value={email} onChange={(e) => setDescription(e.target.value)} required/>
+            <br/>
+            <br/>
+          <input type="submit" value="Add Company!" />
       </form>
     </div>
   )
