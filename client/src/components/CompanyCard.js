@@ -1,4 +1,5 @@
 import React from 'react'
+import StocksContainer from '../containers/StocksContainer'
 
 const CompanyCard = ({company}) => {
   return (
@@ -7,6 +8,12 @@ const CompanyCard = ({company}) => {
     <h3>Name: {company.name}</h3>
     <br/>
     <h4>Description: {company.description}</h4>
+
+    <StocksContainer/>
+
+
+
+
   </div>
 
    

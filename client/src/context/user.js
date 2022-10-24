@@ -4,9 +4,9 @@ const UserContext = React.createContext();
 
 
 function UserProvider({ children }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const[stocks, setStocks] = useState([])
-  const [loggedIn, setLoggedIn] = useState([])
+  const [loggedIn, setLoggedIn] = useState(false)
 
 
 
@@ -29,7 +29,7 @@ function UserProvider({ children }) {
     fetch('/stocks')
     .then(res => res.json())
     .then(data => {
-      setStocks(stocks)
+      setStocks(data)
     })
   }
 
@@ -50,8 +50,8 @@ function UserProvider({ children }) {
     setLoggedIn(true)
   }
 
-  const logout = (user) => {
-    setUser(null)
+  const logout = () => {
+    setUser({})
     setLoggedIn(false)
   }
 
