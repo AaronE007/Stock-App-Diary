@@ -49,7 +49,7 @@ function UserProvider({ children }) {
     })
     .then(res => res.json())
     .then(data => {
-      setStocks([...companies, company])
+      setCompanies([...companies, data])
     })
   }
 

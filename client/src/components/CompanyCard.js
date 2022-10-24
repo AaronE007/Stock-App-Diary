@@ -9,11 +9,7 @@ const CompanyCard = ({company}) => {
     <br/>
     <h4>Description: {company.description}</h4>
 
-    <StocksContainer/>
-
-
-
-
+    <StocksContainer/> 
   </div>
 
    
