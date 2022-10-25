@@ -7,8 +7,8 @@ const StocksContainer = () => {
   const {stocks} = useContext(UserContext)
   
 
-
-  return (
+  
+return (
     <div>
       <h2>Stocks</h2>
       <StocksList stocks={stocks}/>

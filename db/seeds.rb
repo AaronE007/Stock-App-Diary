@@ -7,4 +7,6 @@ c1 = Company.create(name: "CompTeck", description: "Just a computer company.")
 c2 = Company.create(name: "SillyTeck", description: "Just a silly company.")
 
 s1 = Stock.create(user_id: u1.id, company_id: c1.id, name: 'Comp Stock', price_purchased_at: '100', number: '100', info: "Cool option")
-s2 = Stock.create(user_id: u2.id, company_id: c2.id, name: 'Silly Stock', price_purchased_at: '200', number: '200', info: "Big deal")
+s2 = Stock.create(user_id: u1.id, company_id: c2.id, name: 'Silly Stock', price_purchased_at: '200', number: '200', info: "Big deal")
+s2 = Stock.create(user_id: u2.id, company_id: c1.id, name: 'Silly Stock', price_purchased_at: '200', number: '200', info: "Big deal")
+

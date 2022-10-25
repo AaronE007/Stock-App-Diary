@@ -6,8 +6,9 @@ class CompaniesController < ApplicationController
   end
 
   def index 
+    @current_user = User.first
     companies = @current_user.companies
-    render json: companies 
+    render json: companies
   end 
 
 
@@ -17,3 +18,5 @@ class CompaniesController < ApplicationController
     params.require(:company).permit(:name, :description)
   end
 end
+
+# 
