@@ -1,12 +1,11 @@
 class CompaniesController < ApplicationController
   
   def create
-    company = Company.create!(companies_params)
+    company = Company.create(companies_params)
     render json: company, status: :created
   end
 
   def index 
-    @current_user = User.first
     companies = @current_user.companies
     render json: companies
   end 
@@ -19,4 +18,3 @@ class CompaniesController < ApplicationController
   end
 end
 
-# 
