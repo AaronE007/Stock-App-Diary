@@ -2,7 +2,6 @@ import React from 'react'
 
 const CompaniessContainer = () => {
 
-  const {companies} = useContext(UserContext)
 
   
 
