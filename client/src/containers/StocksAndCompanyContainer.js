@@ -8,8 +8,7 @@ const StocksAndCompaniesContainer = () => {
 
   return (
     <div>
-      <h2>Add Companies Here: </h2>
-      <h2>Companies Listed: </h2>
+      <h2>My Companies and Stocks Listed: </h2>
       <StocksAndCompaniesList mycompanies={mycompanies}/>
     </div>
   )
