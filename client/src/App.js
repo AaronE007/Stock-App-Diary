@@ -5,7 +5,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
-import MyCompaniesContainer from "./containers/StocksAndCompanyContainer";
+import StocksAndCompaniesContainer from "./containers/StocksAndCompanyContainer";
+import CompaniessContainer from "./containers/CompaniesContainer";
 
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginForm/>} />
           <Route path="/signup" element={<SignUpForm/>} />
-          <Route path="/companies" element={<MyCompaniesContainer/>} />
-
+          <Route path="/stocks" element={<StocksAndCompaniesContainer/>} />
+          <Route path="/stocks" element={<CompaniessContainer/>} />
         </Routes>
       
     </div>

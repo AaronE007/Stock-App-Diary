@@ -6,16 +6,11 @@ import { UserContext } from '../context/user'
 const CompanyList = () => {
 
   const {companies} = useContext(UserContext)
-  const renderCompanies = Companies.map(comany => <CompanyCard key={company.id} company={company}/>)
+  const renderCompanies = companies.map(company => <CompanyCard key={company.id} company={company}/>)
 
   return (
-
-
-
-
-
     <div>
-      
+      {renderCompanies}
     </div>
   )
 }
