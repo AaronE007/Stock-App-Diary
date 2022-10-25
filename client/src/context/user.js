@@ -8,6 +8,7 @@ function UserProvider({ children }) {
   const[stocks, setStocks] = useState([])
   const [companies, setCompanies] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
+  const [mycompanies, setMyCompanies] = useState([])
 
 
 
@@ -18,11 +19,11 @@ function UserProvider({ children }) {
       setUser(data) 
         if (data.error) {
         setLoggedIn(false)
-        fetchStocks(null)
-        fetchCompanies(null)
+        setMyCompanies([])
+        setCompanies([])
       }else {
         setLoggedIn(true)
-        fetchStocks()
+        setMyCompanies(data.companies)
         fetchCompanies()
       }
     })
@@ -35,11 +36,11 @@ function UserProvider({ children }) {
     .then(data => setCompanies(data))
   }
 
-  const fetchStocks = () => {
-    fetch('/stocks')
-    .then(res => res.json())
-    .then(data => setStocks(data))
-  }
+  // const fetchStocks = () => {
+  //   fetch('/stocks')
+  //   .then(res => res.json())
+  //   .then(data => setStocks(data))
+  // }
 
   const addCompany = (stock) => {
     fetch('/companies', {
@@ -81,7 +82,7 @@ function UserProvider({ children }) {
    }
 
   return (
-    <UserContext.Provider value={{user, companies, stocks, login, logout, signup, loggedIn, addCompany, addStock}}>
+    <UserContext.Provider value={{user, companies, stocks, login, logout, signup, loggedIn, addCompany, addStock, mycompanies}}>
       {children}
     </UserContext.Provider>
   )

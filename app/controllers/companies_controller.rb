@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
   end
 
   def index 
-    companies = @current_user.companies
+    companies = Company.all
     render json: companies
   end 
 

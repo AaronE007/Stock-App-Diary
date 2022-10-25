@@ -1,7 +1,7 @@
 import React from 'react'
-import StocksContainer from '../containers/StocksContainer'
+import StocksList from './StocksList'
 
-const CompanyCard = ({company}) => {
+const StocksAndCompaniesCard = ({company}) => {
   return (
  
   <div style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 600, width:600, color: "gold"}}>
@@ -9,11 +9,11 @@ const CompanyCard = ({company}) => {
     <br/>
     <h4>Description: {company.description}</h4>
 
-    <StocksContainer/> 
+    <StocksList stocks={company.stocks}/> 
   </div>
 
    
   )
 }
 
-export default CompanyCard
+export default StocksAndCompaniesCard

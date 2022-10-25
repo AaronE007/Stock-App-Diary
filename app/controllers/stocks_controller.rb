@@ -5,12 +5,12 @@ class StocksController < ApplicationController
   end 
 
   def create
-    stock = stocks.create(stock_params)
+    stock = current_user.stocks.create(stock_params)
     render json: stock, status: :created
   end
 
   def update
-    if stocks.includes?(@stock)
+    if current_user.stocks.includes?(@stock)
       @stock.update!(post_params)
       render json: @stock
     else
@@ -24,7 +24,7 @@ class StocksController < ApplicationController
   # end
 
   def destroy
-    if stocks.include?(@stock) 
+    if current_user.stocks.include?(@stock) 
       @stock.destroy
       render json: {message: "Stock deleted"}
     else 
@@ -39,6 +39,6 @@ class StocksController < ApplicationController
   # end 
 
   def stock_params
-    params.require(:stock).permit(:name, :price_purchased_at, :number, :info)
+    params.require(:stock).permit(:name, :price_purchased_at, :number, :info, :company_id)
   end 
 end

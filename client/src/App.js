@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
-import CompaniesContainer from "./containers/CompaniesContainer";
+import MyCompaniesContainer from "./containers/StocksAndCompanyContainer";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginForm/>} />
           <Route path="/signup" element={<SignUpForm/>} />
-          <Route path="/companies" element={<CompaniesContainer/>} />
+          <Route path="/companies" element={<MyCompaniesContainer/>} />
 
         </Routes>
       

@@ -1,10 +1,8 @@
-import React, {useContext} from 'react'
-import { UserContext } from '../context/user'
+import React from 'react'
 import StocksList from '../components/StocksList'
 
-const StocksContainer = () => {
+const StocksContainer = ({stocks}) => {
 
-  const {stocks} = useContext(UserContext)
   
 
   
