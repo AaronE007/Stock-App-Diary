@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CompanyCard = () => {
+const CompanyCard = ({company}) => {
   return (
 
 
@@ -8,7 +8,6 @@ const CompanyCard = () => {
     <h3>Name: {company.name}</h3>
     <br/>
     <h4>Description: {company.description}</h4>
-      
     </div>
   )
 }

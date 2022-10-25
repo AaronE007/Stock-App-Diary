@@ -4,7 +4,7 @@ import StocksList from './StocksList'
 const StocksAndCompaniesCard = ({company}) => {
   return (
  
-  <div style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 600, width:600, color: "gold"}}>
+  <div style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 900, width:500, color: "gold"}}>
     <h3>Name: {company.name}</h3>
     <br/>
     <h4>Description: {company.description}</h4>

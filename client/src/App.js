@@ -19,7 +19,7 @@ function App() {
           <Route path="/login" element={<LoginForm/>} />
           <Route path="/signup" element={<SignUpForm/>} />
           <Route path="/stocks" element={<StocksAndCompaniesContainer/>} />
-          <Route path="/stocks" element={<CompaniessContainer/>} />
+          <Route path="/companies" element={<CompaniessContainer/>} />
         </Routes>
       
     </div>

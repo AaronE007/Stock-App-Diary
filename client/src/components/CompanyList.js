@@ -3,6 +3,7 @@ import CompanyCard from './CompanyCard'
 import { UserContext } from '../context/user'
 
 
+
 const CompanyList = () => {
 
   const {companies} = useContext(UserContext)

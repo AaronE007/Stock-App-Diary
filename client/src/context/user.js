@@ -35,11 +35,7 @@ function UserProvider({ children }) {
     .then(data => setCompanies(data))
   }
 
-  // const fetchStocks = () => {
-  //   fetch('/stocks')
-  //   .then(res => res.json())
-  //   .then(data => setStocks(data))
-  // }
+  
 
   const addCompany = (stock) => {
     fetch('/companies', {
@@ -73,6 +69,7 @@ function UserProvider({ children }) {
   const logout = () => {
     setUser({})
     setLoggedIn(false)
+    setCompanies({})
   }
 
   const signup = (user) => {
