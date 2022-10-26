@@ -1,9 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import ReactCardFlip from 'react-card-flip';
 import EditStock from './EditStock';
+import { UserContext } from '../context/user'
+
 
 
 const StockCard = ({stock}) => {
+
+  const {deleteStock} = useContext(UserContext)
 
   const {id} = stock.id
 
@@ -13,8 +17,13 @@ const StockCard = ({stock}) => {
     setIsFlipped(!isFlipped);
   }
 
+ const  handleDeleteClick = () => {
+  deleteStock(id)
+ }
+
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+    <button onClick={handleDeleteClick}>Delete</button>
       <div style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 300, width:300, color: "gold"}}>
         <h3>Name: {stock.name}</h3>
         <br/>
