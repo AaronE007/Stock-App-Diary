@@ -2,19 +2,12 @@ import { useState, useContext } from "react"
 import React  from 'react'
 import { UserContext } from "../context/user"
 
-
-
-
-
-
 const EditStock = ({id}) => {
   const [name, setName] = useState("")
   const [pricepurchasedat, setPricepurchasedat] = useState("")
   const [number, setNumber] = useState("")
   const [info, setInfo] = useState("")
   const {updateStock} = useContext(UserContext)
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -25,10 +18,6 @@ const EditStock = ({id}) => {
       info: info
     }, id)
   }
-
-
- 
-
 
   return (
     <form onSubmit={handleSubmit}>
@@ -47,6 +36,9 @@ const EditStock = ({id}) => {
       <label>Info: </label>
       <input onChange={(e) => setInfo(e.target.value)} type="text" name="info" value={info} required/>
         <br/>
+        <br/>
+      <label>Company: </label>
+      <input onChange={(e) => setCompnay(e.target.value)} type="text" name="info" value={info} required/>
         <br/>
       <input type="submit" value="Change Stock Buy Data" />
     </form>
