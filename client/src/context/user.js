@@ -2,13 +2,11 @@ import React, {useState, useEffect} from "react";
 
 const UserContext = React.createContext();
 
-
 function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [companies, setCompanies] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
   const [mycompanies, setMyCompanies] = useState([])
-
 
 
   useEffect(() => {
@@ -49,12 +47,37 @@ function UserProvider({ children }) {
   }
 
   const addStock = (stock) => {
+    fetch('/stocks', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(stock)
+    })
+    .then(res => res.json())
+    .then(data => {
+      setMyCompanies([...mycompanies, data])
+    })
+
   }
 
   const updateStock = (stock, id) => {
+    fetch(`stocks/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(stock),
+    })
+      .then((r) => r.json())
+      .then(data =>{
+
+      });
   }
 
-  const deleteStock = () => {
+
+  const deleteStock = (id) => {
+      fetch(`stocks/${id}`, {
+        method: "DELETE",
+      });
 
   }
 

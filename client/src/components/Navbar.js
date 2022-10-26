@@ -9,9 +9,6 @@ const Navbar = () => {
   const {user, logout, loggedIn} = useContext(UserContext)
   const navigate = useNavigate()
 
-
-  
-
   const userLogout = () => {
     fetch('/logout', {
       method: 'DELETE',

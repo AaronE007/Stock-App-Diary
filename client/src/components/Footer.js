@@ -7,8 +7,8 @@ const Footer = () => {
       <div styel={{color: "black", fontWeight: "600"}}>
         <h3>A Project by Aaron Elias</h3>
       </div>
-      <br />
-      <br />
+        <br />
+        <br />
       <div>
         <SocialIcon url="https://github.com/AaronE007" />
       </div>
