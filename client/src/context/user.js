@@ -36,12 +36,11 @@ function UserProvider({ children }) {
   }
 
   
-
-  const addCompany = (stock) => {
+  const addCompany = (company) => {
     fetch('/companies', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(stock)
+      body: JSON.stringify(company)
     })
     .then(res => res.json())
     .then(data => {
@@ -49,17 +48,15 @@ function UserProvider({ children }) {
     })
   }
 
-  // const addStock = (stock) => {
-  //   fetch('/stocks', {
-  //     method: 'POST',
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify(stock)
-  //   })
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     setStocks([...stocks, data])
-  //   })
-  // }
+  const addStock = (stock) => {
+  }
+
+  const updateStock = (stock, id) => {
+  }
+
+  const deleteStock = () => {
+
+  }
 
   const login = (user) => {
     setUser(user)
@@ -78,7 +75,7 @@ function UserProvider({ children }) {
    }
 
   return (
-    <UserContext.Provider value={{user, companies, login, logout, signup, loggedIn, addCompany, mycompanies}}>
+    <UserContext.Provider value={{user, companies, login, logout, signup, loggedIn, addCompany, addStock, updateStock, deleteStock, mycompanies}}>
       {children}
     </UserContext.Provider>
   )
