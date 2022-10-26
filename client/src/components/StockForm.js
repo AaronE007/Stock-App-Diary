@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import { useState, useContext } from "react"
+import React  from 'react'
+import { UserContext } from "../context/user"
 
 const StockForm = () => {
   const [name, setName] = useState("")
@@ -6,16 +8,17 @@ const StockForm = () => {
   const [number, setNumber] = useState("")
   const [info, setInfo] = useState("")
   const [company, setCompany] = useState("")
-  const {updateStock} = useContext(UserContext)
+  const {addStock} = useContext(UserContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    updateStock({
+    addStock({
       name: name,
       price_purchased_at: pricepurchasedat,
       number: number,
-      info: info
-    }, id)
+      info: info,
+      company: company
+    })
   }
 
   return (
@@ -37,7 +40,7 @@ const StockForm = () => {
         <br/>
         <br/>
       <label>Company: </label>
-      <input onChange={(e) => setCompnay(e.target.value)} type="text" name="info" value={info} required/>
+      <input onChange={(e) => setCompany(e.target.value)} type="text" name="info" value={info} required/>
         <br/>
       <input type="submit" value="Change Stock Buy Data" />
     </form>

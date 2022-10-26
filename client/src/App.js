@@ -7,12 +7,12 @@ import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
 import StocksAndCompaniesContainer from "./containers/StocksAndCompanyContainer";
 import CompaniessContainer from "./containers/CompaniesContainer";
+import Footer from "./components/Footer";
 
 
 function App() {
   return (
     <div className="App">
-      
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="/stocks" element={<StocksAndCompaniesContainer/>} />
           <Route path="/companies" element={<CompaniessContainer/>} />
         </Routes>
-      
+      <Footer/>
     </div>
   );
 }

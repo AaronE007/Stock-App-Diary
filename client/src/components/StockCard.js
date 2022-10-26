@@ -5,7 +5,6 @@ import EditStock from './EditStock';
 
 const StockCard = ({stock}) => {
 
-
   const {id} = stock.id
 
   const [isFlipped, setIsFlipped] = useState(false);
@@ -13,10 +12,6 @@ const StockCard = ({stock}) => {
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   }
-
-
-
-
 
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
