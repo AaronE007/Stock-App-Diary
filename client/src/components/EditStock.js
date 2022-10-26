@@ -36,10 +36,6 @@ const EditStock = ({id}) => {
       <label>Info: </label>
       <input onChange={(e) => setInfo(e.target.value)} type="text" name="info" value={info} required/>
         <br/>
-        <br/>
-      <label>Company: </label>
-      <input onChange={(e) => setCompnay(e.target.value)} type="text" name="info" value={info} required/>
-        <br/>
       <input type="submit" value="Change Stock Buy Data" />
     </form>
   )

@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const StockForm = () => {
   const [name, setName] = useState("")
   const [pricepurchasedat, setPricepurchasedat] = useState("")
   const [number, setNumber] = useState("")
   const [info, setInfo] = useState("")
+  const [company, setCompany] = useState("")
   const {updateStock} = useContext(UserContext)
 
   const handleSubmit = (e) => {
