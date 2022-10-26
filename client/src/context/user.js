@@ -73,7 +73,6 @@ function UserProvider({ children }) {
       });
   }
 
-
   const deleteStock = (id) => {
       fetch(`stocks/${id}`, {
         method: "DELETE",

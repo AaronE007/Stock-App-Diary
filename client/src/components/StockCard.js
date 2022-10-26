@@ -23,8 +23,8 @@ const StockCard = ({stock}) => {
 
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-    <button onClick={handleDeleteClick}>Delete</button>
       <div style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 300, width:300, color: "gold"}}>
+      <button onClick={handleDeleteClick}>Delete</button>
         <h3>Name: {stock.name}</h3>
         <br/>
         <h4>Price purchased at: {stock.price_purchased_at}</h4>
