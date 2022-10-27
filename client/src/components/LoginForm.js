@@ -41,7 +41,7 @@ const LoginForm = () => {
   return (
     <div>
     <h1>Login</h1>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 300, width: 400, color: "#2a6592"}}>
       <label>Username: </label>
       <input onChange={(e) => setUsername(e.target.value)} type="text" id="usernamename" value={username} required/>
         <br/>

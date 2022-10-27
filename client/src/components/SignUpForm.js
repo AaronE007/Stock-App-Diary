@@ -46,7 +46,8 @@ const SignUpForm = () => {
 
   return (
     <div>
-    <form onSubmit={handleSubmit}>
+    <h1>Sign Up</h1>
+    <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 300, width: 400, color: "#2a6592"}}>
       <label>Username: </label>
       <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required/>
         <br/>

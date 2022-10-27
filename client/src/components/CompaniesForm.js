@@ -21,7 +21,7 @@ const CompaniesForm = () => {
   return (
     <div>
     <h2>Add Company</h2>
-      <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 300, width: 400, color: "gold"}}>
+      <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 300, width: 400, color: "#2a6592"}}>
           <label>Name: </label>
           <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required/>
             <br/>

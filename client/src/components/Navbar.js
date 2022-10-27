@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom'
 import { UserContext } from '../context/user'
 import {useNavigate} from "react-router-dom"
 
+const style = {
+  width: "100%",
+  magrin:"auto",
+  padding: "1em",
+  color: "black",
+  backgroundColor: "#8ec3eb",
+  fontWeight: "600",
+  verticalAlign: "center",
+}
 
 const Navbar = () => {
 
@@ -25,9 +34,9 @@ const Navbar = () => {
       <div>
         <h1>Hello {user.username}</h1>
         <br/>
-        <Link  to="/companies">All Companies</Link>
+        <Link  to="/companies">Community Companies Page</Link>
         <br/>
-        <Link  to="/stocks">All of My Stock Buys Here</Link>
+        <Link  to="/stocks">All of My Stock Buys Diary Here</Link>
         <br/>
         <br/>
         <button onClick={userLogout}> Logout here</button>
@@ -36,9 +45,11 @@ const Navbar = () => {
   } else {
     return (
       <div>
-        <Link  to="/">Home</Link>
-        <Link  to="/login">Login</Link>
-        <Link  to="/signup">Signup</Link>
+        <Link style={style} to="/">Home</Link>
+        
+        <Link style={style} to="/login">Login</Link>
+       
+        <Link style={style} to="/signup">Sign Up</Link>
       </div>
     )
   } 

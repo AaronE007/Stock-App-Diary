@@ -22,7 +22,7 @@ const StockForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 300, width: 400, color: "#2a6592"}}>
       <label>Name: </label>
       <input onChange={(e) => setName(e.target.value)} type="text" name="name" value={name} required/>
         <br/>
