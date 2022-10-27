@@ -2,6 +2,8 @@ import React from 'react'
 import StocksList from './StocksList'
 
 const StocksAndCompaniesCard = ({company}) => {
+
+  
   return (
  
   <div style={{margin: "auto", border: "solid", backgroundColor: "blue", height: 900, width:500, color: "gold"}}>
@@ -10,6 +12,7 @@ const StocksAndCompaniesCard = ({company}) => {
     <h4>Description: {company.description}</h4>
 
     <StocksList stocks={company.stocks}/> 
+
   </div>
 
    

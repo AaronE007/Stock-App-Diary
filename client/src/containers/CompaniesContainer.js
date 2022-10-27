@@ -4,10 +4,6 @@ import CompanyList from '../components/CompanyList'
 
 const CompaniessContainer = () => {
 
-
-  
-
-  
 return (
     <div>
       <h3>Add Companies Here</h3>

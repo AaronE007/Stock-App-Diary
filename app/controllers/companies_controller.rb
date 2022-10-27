@@ -1,4 +1,7 @@
 class CompaniesController < ApplicationController
+
+  skip_before_action :authorized!, only: [:index]
+
   
   def create
     company = Company.create(companies_params)
@@ -6,7 +9,7 @@ class CompaniesController < ApplicationController
   end
 
   def index 
-    companies = Company.all
+    companies = Companies.all
     render json: companies
   end 
 

@@ -6,7 +6,7 @@ function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [companies, setCompanies] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
-  const [mycompanies, setMyCompanies] = useState([])
+  const [stocks, setStocks] = useState([])
 
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function UserProvider({ children }) {
         setCompanies([])
       }else {
         setLoggedIn(true)
-        setMyCompanies(data.companies)
+        fetchStocks()
         fetchCompanies()
       }
     })
@@ -31,6 +31,12 @@ function UserProvider({ children }) {
     fetch('/companies')
     .then((r) => r.json())
     .then(data => setCompanies(data))
+  }
+
+  const fetchStocks = () =>{
+    fetch('/stocks')
+    .then((r) => r.json())
+    .then(data => setStocks(data))
   }
 
   
@@ -54,7 +60,7 @@ function UserProvider({ children }) {
     })
     .then(res => res.json())
     .then(data => {
-      setMyCompanies([...mycompanies, data])
+      setStocks([...stocks, data])
     })
 
   }
@@ -70,6 +76,7 @@ function UserProvider({ children }) {
       .then((r) => r.json())
       .then(data =>{
 
+
       });
   }
 
@@ -77,7 +84,7 @@ function UserProvider({ children }) {
       fetch(`stocks/${id}`, {
         method: "DELETE",
       });
-
+    setStocks({})
   }
 
   const login = (user) => {
@@ -88,7 +95,7 @@ function UserProvider({ children }) {
   const logout = () => {
     setUser({})
     setLoggedIn(false)
-    setCompanies({})
+    setStocks({})
   }
 
   const signup = (user) => {

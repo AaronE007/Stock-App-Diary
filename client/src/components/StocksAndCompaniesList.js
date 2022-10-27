@@ -4,6 +4,8 @@ const StockandCompaniesList = ({mycompanies}) => {
   
   const renderStocksCompanies = mycompanies.map(company => <StocksAndCompaniesCard key={company.id} company={company}/>)
 
+  debugger
+
   return (
     <div>
     {renderStocksCompanies}  
