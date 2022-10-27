@@ -5,7 +5,7 @@ import StockForm from '../components/StockForm'
 
 const StocksAndCompaniesContainer = () => {
     
-  const {mycompanies} = useContext(UserContext)
+  const {stocks} = useContext(UserContext)
 
 
   return (
@@ -14,7 +14,7 @@ const StocksAndCompaniesContainer = () => {
       <StockForm/>
       <br/>
       <br/>
-      <StocksAndCompaniesList mycompanies={mycompanies}/>
+      <StocksAndCompaniesList stocks={stocks}/>
     </div>
   )
 

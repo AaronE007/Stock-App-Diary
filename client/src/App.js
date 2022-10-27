@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
-import StocksAndCompaniesContainer from "./containers/StocksAndCompanyContainer";
+import StocksAndCompaniesContainer from "./containers/StocksContainer";
 import CompaniessContainer from "./containers/CompaniesContainer";
 import Footer from "./components/Footer";
 
