@@ -1,7 +1,8 @@
 class StocksController < ApplicationController
 
   def index
-    render json: current_user.stocks
+    stocks = current_user.stocks
+    render json: stocks, include: ['company']
   end 
 
   # def create
