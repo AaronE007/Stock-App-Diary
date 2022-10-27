@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { UserContext } from '../context/user'
-import StocksAndCompaniesList from '../components/StocksAndCompaniesList'
+import StocksList from '../components/StocksList'
 import StockForm from '../components/StockForm'
 
 const StocksAndCompaniesContainer = () => {
@@ -14,7 +14,7 @@ const StocksAndCompaniesContainer = () => {
       <StockForm/>
       <br/>
       <br/>
-      <StocksAndCompaniesList stocks={stocks}/>
+      <StocksList stocks={stocks}/>
     </div>
   )
 
