@@ -16,7 +16,7 @@ function UserProvider({ children }) {
       setUser(data) 
         if (data.error) {
         setLoggedIn(false)
-        setMyCompanies([])
+        setStocks([])
         setCompanies([])
       }else {
         setLoggedIn(true)

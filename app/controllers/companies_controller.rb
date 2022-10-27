@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 
-  skip_before_action :authorized!, only: [:index]
+  skip_before_action :authorize!, only: [:index]
 
   
   def create
@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
   end
 
   def index 
-    companies = Companies.all
+    companies = Company.all
     render json: companies
   end 
 
