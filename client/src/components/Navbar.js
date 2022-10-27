@@ -27,7 +27,7 @@ const Navbar = () => {
         <br/>
         <Link  to="/companies">All Companies</Link>
         <br/>
-        <Link  to="/stocks">My Companies and Stocks</Link>
+        <Link  to="/stocks">All of My Stock Buys Here</Link>
         <br/>
         <br/>
         <button onClick={userLogout}> Logout here</button>

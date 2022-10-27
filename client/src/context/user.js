@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 const UserContext = React.createContext();
 
 function UserProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   const [companies, setCompanies] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
   const [stocks, setStocks] = useState([])
@@ -22,6 +22,7 @@ function UserProvider({ children }) {
         setLoggedIn(true)
         fetchStocks()
         fetchCompanies()
+
       }
     })
   }, [])
@@ -88,6 +89,8 @@ function UserProvider({ children }) {
   }
 
   const login = (user) => {
+    fetchCompanies()
+    fetchStocks()
     setUser(user)
     setLoggedIn(true)
   }
@@ -95,7 +98,6 @@ function UserProvider({ children }) {
   const logout = () => {
     setUser({})
     setLoggedIn(false)
-    setStocks({})
   }
 
   const signup = (user) => {
