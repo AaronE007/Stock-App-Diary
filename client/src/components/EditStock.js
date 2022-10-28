@@ -7,19 +7,39 @@ const EditStock = ({id}) => {
   const [pricepurchasedat, setPricepurchasedat] = useState("")
   const [number, setNumber] = useState("")
   const [info, setInfo] = useState("")
-  const {updateStock} = useContext(UserContext)
+  const {onUpdateStock} = useContext(UserContext)
+  const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    updateStock({
-      name: name,
-      price_purchased_at: pricepurchasedat,
-      number: number,
-      info: info
-    }, id)
+  
+
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch(`/meals/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: name,
+        price_purchased_at: pricepurchasedat,
+        number: number,
+        info: info
+      })
+   })
+    .then(res => res.json())
+    .then(updatedStock => {
+        if (!updatedStock.errors) {
+          onUpdateStock(updatedStock)
+        } else {
+          const errorsList = updatedStock.errors.map(e => <li>{e}</li>)
+          setErrors(errorsList)
+        }
+     })
   }
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <label>Name: </label>
       <input onChange={(e) => setName(e.target.value)} type="text" name="name" value={name} required/>
@@ -38,6 +58,10 @@ const EditStock = ({id}) => {
         <br/>
       <input type="submit" value="Change Stock Buy Data" />
     </form>
+      <ul>
+        {errors}
+      </ul>
+    </div>
   )
 }
 
