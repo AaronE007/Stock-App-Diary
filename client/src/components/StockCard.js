@@ -6,11 +6,8 @@ import { UserContext } from '../context/user'
 
 
 const StockCard = ({stock}) => {
-
   const {deleteStock} = useContext(UserContext)
-
   const {id} = stock.id
-
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
