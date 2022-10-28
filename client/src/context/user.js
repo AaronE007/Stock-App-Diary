@@ -22,7 +22,6 @@ function UserProvider({ children }) {
         setLoggedIn(true)
         fetchStocks()
         fetchCompanies()
-
       }
     })
   }, [])
@@ -66,27 +65,30 @@ function UserProvider({ children }) {
 
   }
 
-  const updateStock = (stock, id) => {
-    fetch(`stocks/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(stock),
-    })
-      .then((r) => r.json())
-      .then(data =>{
+
+  function onUpdateStock(updatedStock) {
+    const stocksUpdated = stocks.map((stock) => {
+      if (stock.id === updatedStock.id) {
+        return updatedStock;
+      } else {
+        return stock;
+      }
+    });
+    setStocks(stocksUpdated);
+  }
 
 
-      });
+  function onDeleteStock(id) {
+    const updatedStocks= stocks.filter((stock) => stock.id !== id);
+    setStocks(updatedStocks);
   }
 
   const deleteStock = (id) => {
-      fetch(`stocks/${id}`, {
-        method: "DELETE",
-      });
-    setStocks({})
-  }
+    fetch(`stocks/${id}`, {
+      method: "DELETE",
+    });
+  onDeleteStock(id)
+}
 
   const login = (user) => {
     fetchCompanies()
@@ -105,8 +107,11 @@ function UserProvider({ children }) {
     setLoggedIn(true)
    }
 
+
+
   return (
-    <UserContext.Provider value={{user, companies, login, logout, signup, loggedIn, addCompany, addStock, updateStock, deleteStock, stocks}}>
+    <UserContext.Provider value={{user, companies, stocks, loggedIn, login,
+       logout, signup, addCompany, addStock, onUpdateStock, deleteStock}}>
       {children}
     </UserContext.Provider>
   )
