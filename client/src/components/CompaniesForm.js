@@ -1,12 +1,10 @@
 import React,{ useState, useContext } from "react";
 import {UserContext} from "../context/user";
-import {useNavigate} from "react-router-dom"
 
 const CompaniesForm = () => {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const {addCompany} = useContext(UserContext)
-  const navigate = useNavigate()
 
 
   const handleSubmit = (e) => {
@@ -15,7 +13,6 @@ const CompaniesForm = () => {
       name: name,
       description: description
     })
-    navigate('/companies')
   }
 
   return (

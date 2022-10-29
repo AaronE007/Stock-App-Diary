@@ -53,6 +53,7 @@ function UserProvider({ children }) {
   }
 
   const addStock = (stock) => {
+    console.log(stock)
     fetch('/stocks', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -110,8 +111,7 @@ function UserProvider({ children }) {
 
 
   return (
-    <UserContext.Provider value={{user, companies, stocks, loggedIn, login,
-       logout, signup, addCompany, addStock, onUpdateStock, deleteStock}}>
+    <UserContext.Provider value={{user, companies, stocks, loggedIn, login, logout, signup, addCompany, addStock, onUpdateStock, deleteStock}}>
       {children}
     </UserContext.Provider>
   )

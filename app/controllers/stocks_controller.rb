@@ -5,11 +5,11 @@ class StocksController < ApplicationController
     render json: stocks, include: ['company']
   end 
 
-  # def create
-  #   company = Comapny.find_or_create_by(name: params["company"])
-  #   stock = current_user.stocks.create(stock_params)
-  #   render json: stock, status: :created
-  # end
+  def create
+    company = Company.find_or_create_by(name: params["company"])
+    stock = current_user.stocks.create(stock_params)
+    render json: stock, status: :created
+  end
 
   # def update
   #   if current_user.stocks.includes?(@stock)
@@ -33,6 +33,6 @@ class StocksController < ApplicationController
   private 
 
   def stock_params
-    params.require(:stock).permit(:name, :price_purchased_at, :number, :info, :restaurant )
+    params.require(:stock).permit(:name, :price_purchased_at, :number, :info, :company )
   end 
 end

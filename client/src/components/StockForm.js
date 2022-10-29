@@ -42,7 +42,7 @@ const StockForm = () => {
       <label>Company: </label>
       <input onChange={(e) => setCompany(e.target.value)} type="text" name="company" value={company} required/>
         <br/>
-      <input type="submit" value="Change Stock Buy Data" />
+      <input type="submit" value="Add Stock" />
     </form>
   )
 }
