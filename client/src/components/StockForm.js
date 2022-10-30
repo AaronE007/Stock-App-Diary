@@ -20,7 +20,6 @@ const StockForm = () => {
     })
   }
 
-
   const newStock = {
     name: stock.name,
     price_purchased_at: stock.pricePurchasedAt,
@@ -55,14 +54,11 @@ const StockForm = () => {
         <label>Name: </label>
         <input onChange={handleChange} type="text" name="name" value={stock.name} required/>
           <br/>
-          <br/>
         <label>Price purcahased at: </label>
         <input onChange={handleChange} type="number" name="price_puchased_at" value={stock.pricePurchasedAt} required/>
           <br/>
-          <br/>
         <label>Number of stock bought: </label>
         <input onChange={handleChange} type="number" name="number" value={stock.number} required/>
-          <br/>
           <br/>
         <label>Info: </label>
         <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
@@ -75,6 +71,9 @@ const StockForm = () => {
       <ul>
         {errors}
       </ul>
+      <div>
+        <h5>Add a new stock here. If the company you want to add does not exist in the community database then it will add it to the comunity database.</h5>
+      </div>
   </div>
   )
 }
