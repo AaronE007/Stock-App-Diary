@@ -8,15 +8,17 @@ class StocksController < ApplicationController
   def create
     company = Company.find_or_create_by(name: params['company'])
     stock = current_user.stocks.create!(stock_params.merge(company_id: company.id))
-  
     render json: stock, status: :created
   end
 
   def update
-    stock = Stock.find(params[:id])
+   if  stock = Stock.find(params[:id])
     stock.update!(stock_params)
     stock.reload
     render json: stock
+   else 
+    no_route
+   end 
   end 
 
   

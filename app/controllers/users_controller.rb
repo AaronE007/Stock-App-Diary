@@ -9,11 +9,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    
     if current_user
     render json: current_user
     else 
-      render json: {error: "Not Authorized"}, status: :unauthorized
+      no_route
     end 
   end 
 
@@ -23,5 +22,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :bio)                        
   end
+
 
 end
