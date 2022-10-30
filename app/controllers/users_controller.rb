@@ -3,9 +3,13 @@ class UsersController < ApplicationController
 
 
   def create
-    user = User.create!(user_params)
+    user = User.create(user_params)
+    if user.valid?
     session[:user_id] = user.id
     render json: user
+    else 
+      render json: {errors: user.errors.full_messages}
+    end 
   end
 
   def show
