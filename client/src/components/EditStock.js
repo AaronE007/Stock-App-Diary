@@ -54,7 +54,7 @@ const EditStock = ({id}) => {
           <br/>
           <br/>
         <label>Price purcahased at: </label>
-        <input onChange={handleChange} type="number" name="price_puchased_at" value={stock.pricePurchasedAt} required/>
+        <input onChange={handleChange} type="number" name="pricePurchasedAt" value={stock.pricePurchasedAt} required/>
           <br/>
           <br/>
         <label>Number of stock bought: </label>

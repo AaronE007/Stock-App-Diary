@@ -13,7 +13,7 @@ class StocksController < ApplicationController
   end
 
   def update
-    Stock.find(params[:id])
+    stock = Stock.find(params[:id])
     stock.update!(stock_params)
     stock.reload
     render json: stock
