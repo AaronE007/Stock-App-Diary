@@ -13,23 +13,17 @@ class StocksController < ApplicationController
   end
 
   def update
-    if Stock.find(params[:id])
-      stock.update!(stock_params)
-      stock.reload
-      render json: stock
-    else
-      no_route
-    end 
+    Stock.find(params[:id])
+    stock.update!(stock_params)
+    stock.reload
+    render json: stock
   end 
 
   
   def destroy
-      stock = Stock.find(params[:id])
-      stock.destroy
-      render json: {message: "Stock deleted"}
-    else 
-      no_route
-    end 
+    stock = Stock.find(params[:id])
+    stock.destroy
+    render json: {message: "Stock deleted"}
   end  
 
   private 

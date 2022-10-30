@@ -7,7 +7,7 @@ import { UserContext } from '../context/user'
 
 const StockCard = ({stock}) => {
   const {deleteStock} = useContext(UserContext)
-  const {id} = stock.id
+  const {id} = stock
   const [isFlipped, setIsFlipped] = useState(false);
 
 
