@@ -7,7 +7,7 @@ class StocksController < ApplicationController
 
   def create
     company = Company.find_or_create_by(name: params["company"])
-    stock = current_user.stocks.create(stock_params)
+    stock = current_user.stocks.create!(stock_params)
     render json: stock, status: :created
   end
 

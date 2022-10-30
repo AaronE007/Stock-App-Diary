@@ -7,6 +7,7 @@ const EditStock = ({id}) => {
   const [pricepurchasedat, setPricepurchasedat] = useState("")
   const [number, setNumber] = useState("")
   const [info, setInfo] = useState("")
+  const [company, setCompany] = useState("")
   const {onUpdateStock} = useContext(UserContext)
   const [errors, setErrors] = useState([]);
 
@@ -24,7 +25,8 @@ const EditStock = ({id}) => {
         username: name,
         price_purchased_at: pricepurchasedat,
         number: number,
-        info: info
+        info: info,
+        company: stock.company
       })
    })
     .then(res => res.json())
@@ -55,7 +57,10 @@ const EditStock = ({id}) => {
         <br/>
       <label>Info: </label>
       <input onChange={(e) => setInfo(e.target.value)} type="text" name="info" value={info} required/>
-        <br/>
+      <br/>
+      <label>Company: </label>
+      <input onChange={(e) => setCompany(e.target.value)} type="text" name="company" value={company} required/>
+       
       <input type="submit" value="Change Stock Buy Data" />
     </form>
       <ul>

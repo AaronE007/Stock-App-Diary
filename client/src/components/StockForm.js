@@ -17,7 +17,7 @@ const StockForm = () => {
       price_purchased_at: pricepurchasedat,
       number: number,
       info: info,
-      company: company
+      company: stock.company
     })
   }
 
