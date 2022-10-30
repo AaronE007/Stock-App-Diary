@@ -10,7 +10,7 @@ const StockForm = () => {
     pricePurchasedAt: "",
     number: "",
     info: "",
-    company: ""
+    Company: ""
   })
 
   const handleChange = (e) => {
@@ -25,12 +25,12 @@ const StockForm = () => {
     price_purchased_at: stock.pricePurchasedAt,
     number: stock.number,
     info: stock.info,
-    company: stock.company
+    Company: stock.Company
   }
   
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`/meals`, {
+    fetch(`/stocks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const StockForm = () => {
         <input onChange={handleChange} type="text" name="name" value={stock.name} required/>
           <br/>
         <label>Price purcahased at: </label>
-        <input onChange={handleChange} type="number" name="price_puchased_at" value={stock.pricePurchasedAt} required/>
+        <input onChange={handleChange} type="number" name="pricePurchasedAt" value={stock.pricePurchasedAt} required/>
           <br/>
         <label>Number of stock bought: </label>
         <input onChange={handleChange} type="number" name="number" value={stock.number} required/>
@@ -64,16 +64,16 @@ const StockForm = () => {
         <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
           <br/>
         <label>Company: </label>
-        <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
+        <input onChange={handleChange} type="text" name="Company" value={stock.Company} required/>
           <br/>
         <input type="submit" value="Add Stock" />
+        <div>
+          <h5>Add a new stock here. If the company you want to add does not exist in the community database then it will add it to the comunity database.</h5>
+        </div>
       </form>
       <ul>
         {errors}
       </ul>
-      <div>
-        <h5>Add a new stock here. If the company you want to add does not exist in the community database then it will add it to the comunity database.</h5>
-      </div>
   </div>
   )
 }

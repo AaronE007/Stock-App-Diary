@@ -30,7 +30,7 @@ const EditStock = ({id}) => {
   
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`/meals/${id}`, {
+    fetch(`/stocks/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
