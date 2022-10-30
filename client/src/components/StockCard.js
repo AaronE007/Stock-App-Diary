@@ -7,7 +7,7 @@ import { UserContext } from '../context/user'
 
 const StockCard = ({stock}) => {
   const {deleteStock} = useContext(UserContext)
-  const {id} = stock
+  const {id} = stock.id
   const [isFlipped, setIsFlipped] = useState(false);
 
 
@@ -28,7 +28,7 @@ const StockCard = ({stock}) => {
         <h4>Price purchased at: {stock.price_purchased_at}</h4>
         <h4>Number of Stock Bought: {stock.number}</h4>
         <h4>Info: {stock.info}</h4>
-        <h4>Company: {stock.company?.name}</h4>
+        <h4>Company: {stock.company.name}</h4>
         <br/>
         <button onClick={handleClick}>Click to Update Stock</button>
       </div>

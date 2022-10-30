@@ -12,24 +12,25 @@ class StocksController < ApplicationController
     render json: stock, status: :created
   end
 
-  # def update
-  #   if current_user.stocks.includes?(@stock)
-  #     @stock.update!(post_params)
-  #     render json: @stock
-  #   else
-  #     no_route
-  #   end 
-  # end 
+  def update
+    if Stock.find(params[:id])
+      stock.update!(stock_params)
+      stock.reload
+      render json: stock
+    else
+      no_route
+    end 
+  end 
 
   
-  # def destroy
-  #   if current_user.stocks.include?(@stock) 
-  #     @stock.destroy
-  #     render json: {message: "Stock deleted"}
-  #   else 
-  #     no_route
-  #   end 
-  # end  
+  def destroy
+      stock = Stock.find(params[:id])
+      stock.destroy
+      render json: {message: "Stock deleted"}
+    else 
+      no_route
+    end 
+  end  
 
   private 
 

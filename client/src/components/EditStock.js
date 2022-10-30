@@ -9,8 +9,7 @@ const EditStock = ({id}) => {
     name: "", 
     pricePurchasedAt: "",
     number: "",
-    info: "",
-    company: ""
+    info: ""
   })
  
   const handleChange = (e) => {
@@ -24,8 +23,7 @@ const EditStock = ({id}) => {
     name: stock.name,
     price_purchased_at: stock.pricePurchasedAt,
     number: stock.number,
-    info: stock.info,
-    company: stock.company
+    info: stock.info
   }
   
   function handleSubmit(e) {
@@ -65,9 +63,6 @@ const EditStock = ({id}) => {
           <br/>
         <label>Info: </label>
         <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
-          <br/>
-        <label>Company: </label>
-        <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
           <br/>
         <input type="submit" value="Change Stock Buy Data" />
       </form>

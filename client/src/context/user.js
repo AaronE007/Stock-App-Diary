@@ -33,11 +33,6 @@ function UserProvider({ children }) {
     .then(data => setCompanies(data))
   }
 
-  // const fetchStocks = () =>{
-  //   fetch('/stocks')
-  //   .then((r) => r.json())
-  //   .then(data => setStocks(data))
-  // }
 
   
   const addCompany = (company) => {
@@ -54,8 +49,18 @@ function UserProvider({ children }) {
 
   const addStock = (stock) => {
     setStocks([...stocks, stock])
+    if (!checkCompanyExists(stock)) {
+      setCompanies([...companies, stock.company])
+    }
   }
 
+
+  const checkCompanyExists = (stock) => {
+    return companies.some((company) => { 
+     return company.name === stock.company.name
+    })
+    
+  }
 
   function onUpdateStock(updatedStock) {
     const stocksUpdated = stocks.map((stock) => {
@@ -84,6 +89,8 @@ function UserProvider({ children }) {
   const login = (user) => {
     setUser(user)
     setLoggedIn(true)
+    fetchCompanies()
+    setStocks(user.stocks)
   }
 
   const logout = () => {

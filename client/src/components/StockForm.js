@@ -25,7 +25,7 @@ const StockForm = () => {
     price_purchased_at: stock.pricePurchasedAt,
     number: stock.number,
     info: stock.info,
-    Company: stock.company
+    company: stock.company
   }
   
   function handleSubmit(e) {
