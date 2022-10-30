@@ -3,14 +3,19 @@ import React  from 'react'
 import { UserContext } from "../context/user"
 
 const EditStock = ({id}) => {
-  const [name, setName] = useState("")
-  const [pricepurchasedat, setPricepurchasedat] = useState("")
-  const [number, setNumber] = useState("")
-  const [info, setInfo] = useState("")
-  const [company, setCompany] = useState("")
-  const {onUpdateStock} = useContext(UserContext)
-  const [errors, setErrors] = useState([]);
+  const [stock, setStock] = useState({
+    name: "", 
+    pricePurchasedAt: "",
+    number: "",
+    info: "",
+    company: ""
+  })
+ 
+  const [errors, setErrors] = useState([])
 
+  const {onUpdateStock} = useContext(UserContext)
+
+  const 
   
 
 
@@ -44,11 +49,11 @@ const EditStock = ({id}) => {
     <div>
     <form onSubmit={handleSubmit}>
       <label>Name: </label>
-      <input onChange={(e) => setName(e.target.value)} type="text" name="name" value={name} required/>
+      <input onChange={} type="text" name="name" value={stock.name} required/>
         <br/>
         <br/>
       <label>Price purcahased at: </label>
-      <input onChange={(e) => setPricepurchasedat(e.target.value)} type="number" name="price_puchased_at" value={pricepurchasedat} required/>
+      <input onChange={(e) => setPricepurchasedat(e.target.value)} type="number" name="price_puchased_at" value={stock.} required/>
         <br/>
         <br/>
       <label>Number of stock bought: </label>
