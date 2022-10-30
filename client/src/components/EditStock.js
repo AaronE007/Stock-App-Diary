@@ -15,7 +15,21 @@ const EditStock = ({id}) => {
 
   const {onUpdateStock} = useContext(UserContext)
 
-  const 
+
+  const handleChange = (e) => {
+    setStock({
+      ...stock,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const newStock = {
+    name: stock.name,
+    price_purchased_at: stock.pricePurchasedAt,
+    number: stock.number,
+    info: stock.info,
+    company: stock.company
+  }
   
 
 
@@ -26,13 +40,7 @@ const EditStock = ({id}) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        username: name,
-        price_purchased_at: pricepurchasedat,
-        number: number,
-        info: info,
-        company: stock.company
-      })
+      body: JSON.stringify(newStock),
    })
     .then(res => res.json())
     .then(updatedStock => {
@@ -49,22 +57,22 @@ const EditStock = ({id}) => {
     <div>
     <form onSubmit={handleSubmit}>
       <label>Name: </label>
-      <input onChange={} type="text" name="name" value={stock.name} required/>
+      <input onChange={handleChange} type="text" name="name" value={stock.name} required/>
         <br/>
         <br/>
       <label>Price purcahased at: </label>
-      <input onChange={(e) => setPricepurchasedat(e.target.value)} type="number" name="price_puchased_at" value={stock.} required/>
+      <input onChange={handleChange} type="number" name="price_puchased_at" value={stock.pricePurchasedAt} required/>
         <br/>
         <br/>
       <label>Number of stock bought: </label>
-      <input onChange={(e) => setNumber(e.target.value)} type="number" name="number" value={number} required/>
+      <input onChange={handleChange} type="number" name="number" value={number.number} required/>
         <br/>
         <br/>
       <label>Info: </label>
-      <input onChange={(e) => setInfo(e.target.value)} type="text" name="info" value={info} required/>
+      <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
       <br/>
       <label>Company: </label>
-      <input onChange={(e) => setCompany(e.target.value)} type="text" name="company" value={company} required/>
+      <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
        
       <input type="submit" value="Change Stock Buy Data" />
     </form>
