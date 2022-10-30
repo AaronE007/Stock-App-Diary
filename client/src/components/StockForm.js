@@ -10,7 +10,7 @@ const StockForm = () => {
     pricePurchasedAt: "",
     number: "",
     info: "",
-    Company: ""
+    company: ""
   })
 
   const handleChange = (e) => {
@@ -25,7 +25,7 @@ const StockForm = () => {
     price_purchased_at: stock.pricePurchasedAt,
     number: stock.number,
     info: stock.info,
-    Company: stock.Company
+    Company: stock.company
   }
   
   function handleSubmit(e) {
@@ -64,7 +64,7 @@ const StockForm = () => {
         <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
           <br/>
         <label>Company: </label>
-        <input onChange={handleChange} type="text" name="Company" value={stock.Company} required/>
+        <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
           <br/>
         <input type="submit" value="Add Stock" />
         <div>

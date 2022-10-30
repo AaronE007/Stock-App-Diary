@@ -20,7 +20,7 @@ function UserProvider({ children }) {
         setCompanies([])
       }else {
         setLoggedIn(true)
-        fetchStocks()
+        setStocks(data.stocks)
         fetchCompanies()
       }
     })
@@ -33,11 +33,11 @@ function UserProvider({ children }) {
     .then(data => setCompanies(data))
   }
 
-  const fetchStocks = () =>{
-    fetch('/stocks')
-    .then((r) => r.json())
-    .then(data => setStocks(data))
-  }
+  // const fetchStocks = () =>{
+  //   fetch('/stocks')
+  //   .then((r) => r.json())
+  //   .then(data => setStocks(data))
+  // }
 
   
   const addCompany = (company) => {
@@ -82,13 +82,12 @@ function UserProvider({ children }) {
 }
 
   const login = (user) => {
-    fetchCompanies()
-    fetchStocks()
     setUser(user)
     setLoggedIn(true)
   }
 
   const logout = () => {
+    setStocks({})
     setUser({})
     setLoggedIn(false)
   }
