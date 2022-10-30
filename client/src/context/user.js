@@ -94,7 +94,6 @@ function UserProvider({ children }) {
   }
 
   const logout = () => {
-    setStocks({})
     setUser({})
     setLoggedIn(false)
   }
@@ -102,6 +101,8 @@ function UserProvider({ children }) {
   const signup = (user) => {
     setUser(user)
     setLoggedIn(true)
+    fetchCompanies()
+    setStocks({})
    }
 
 

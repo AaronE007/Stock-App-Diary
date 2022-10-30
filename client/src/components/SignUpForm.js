@@ -24,11 +24,13 @@ const SignUpForm = () => {
       headers: {
         "Content-Type": "application/json"},
         body: JSON.stringify({
-          username,
-          email,
-          password,
-          password_confirmation:  passwordConfirmation,
-          bio,
+          user: {
+            username: username,
+            email: email,
+            password: password,
+            password_confirmation:  passwordConfirmation,
+            bio: bio
+          }
         })
      })
      .then(res => res.json())
