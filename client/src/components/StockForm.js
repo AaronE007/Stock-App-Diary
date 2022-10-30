@@ -68,7 +68,7 @@ const StockForm = () => {
           <br/>
         <input type="submit" value="Add Stock" />
         <div>
-          <h5>Add a new stock here. If the company you want to add does not exist in the community database then it will add it to the comunity database.</h5>
+          <h5>Add a new stock here. If the company you want to add does not exist in the community database, it will be added it to the database.</h5>
         </div>
       </form>
       <ul>
