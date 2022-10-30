@@ -30,6 +30,10 @@ class StocksController < ApplicationController
 
   private 
 
+  def no_route
+    render json: {error: "Not authorized"}
+  end
+
   def stock_params
     params.require(:stock).permit(:name, :price_purchased_at, :number, :info, :company )
   end 

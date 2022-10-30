@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if current_user
     render json: current_user
     else 
-      no_route
+      render json: {error: "Not Authorized"}, status: :unauthorized
     end 
   end 
 
@@ -23,5 +23,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :bio)                        
   end
 
-
+  
 end

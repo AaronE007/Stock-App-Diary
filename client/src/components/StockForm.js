@@ -4,7 +4,6 @@ import { UserContext } from "../context/user"
 
 const StockForm = () => {
   const {addStock} = useContext(UserContext)
-  const [errors, setErrors] = useState([])
   const [stock, setStock] = useState({
     name: "", 
     pricePurchasedAt: "",
@@ -39,12 +38,7 @@ const StockForm = () => {
    })
     .then(res => res.json())
     .then(stock => {
-        if (!stock.errors) {
           addStock(stock)
-        } else {
-          const errorsList = stock.errors.map(e => <li>{e}</li>)
-          setErrors(errorsList)
-        }
      })
   }
 
@@ -71,9 +65,6 @@ const StockForm = () => {
         <h5>Add a new stock here. If the company you want to add does not exist in the community database, it will be added it to the database.</h5>
       </div>
     </form>
-    <ul>
-      {errors}
-    </ul>
   </div>
   )
 }
