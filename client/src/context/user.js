@@ -102,8 +102,19 @@ function UserProvider({ children }) {
     setUser(user)
     setLoggedIn(true)
     fetchCompanies()
-    setStocks({})
-   }
+    setStocks([{
+      "id": 1,
+      "name": "Sample Stock",
+      "price_purchased_at": 100,
+      "info": "Cool option",
+      "number": 100,
+      "company": {
+      "id": 1,
+      "name": "Sample Company",
+      "description": "Just a computer company."
+      }
+    }])
+  }
 
 
 
