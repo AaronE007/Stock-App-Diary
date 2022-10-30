@@ -3,7 +3,8 @@ import React  from 'react'
 import { UserContext } from "../context/user"
 
 const StockForm = () => {
-
+  const {addStock} = useContext(UserContext)
+  const [errors, setErrors] = useState([])
   const [stock, setStock] = useState({
     name: "", 
     pricePurchasedAt: "",
@@ -20,19 +21,6 @@ const StockForm = () => {
   }
 
 
-  const {addStock} = useContext(UserContext)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    addStock({
-      name: name,
-      price_purchased_at: pricepurchasedat,
-      number: number,
-      info: info,
-      company: stock.company
-    })
-  }
-
   const newStock = {
     name: stock.name,
     price_purchased_at: stock.pricePurchasedAt,
@@ -41,10 +29,30 @@ const StockForm = () => {
     company: stock.company
   }
   
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch(`/meals`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newStock),
+   })
+    .then(res => res.json())
+    .then(stock => {
+        if (!stock.errors) {
+          addStock(stock)
+        } else {
+          const errorsList = stock.errors.map(e => <li>{e}</li>)
+          setErrors(errorsList)
+        }
+     })
+  }
 
   return (
-    <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 300, width: 400, color: "#2a6592"}}>
-      <label>Name: </label>
+    <div>
+      <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 400, width: 400, color: "#2a6592"}}>
+        <label>Name: </label>
         <input onChange={handleChange} type="text" name="name" value={stock.name} required/>
           <br/>
           <br/>
@@ -53,17 +61,21 @@ const StockForm = () => {
           <br/>
           <br/>
         <label>Number of stock bought: </label>
-        <input onChange={handleChange} type="number" name="number" value={number.number} required/>
+        <input onChange={handleChange} type="number" name="number" value={stock.number} required/>
           <br/>
           <br/>
         <label>Info: </label>
         <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
-        <br/>
+          <br/>
         <label>Company: </label>
         <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
-        <br/>
-      <input type="submit" value="Add Stock" />
-    </form>
+          <br/>
+        <input type="submit" value="Add Stock" />
+      </form>
+      <ul>
+        {errors}
+      </ul>
+  </div>
   )
 }
 
