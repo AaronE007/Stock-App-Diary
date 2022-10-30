@@ -49,31 +49,31 @@ const StockForm = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 400, width: 400, color: "#2a6592"}}>
-        <label>Name: </label>
-        <input onChange={handleChange} type="text" name="name" value={stock.name} required/>
-          <br/>
-        <label>Price purcahased at: </label>
-        <input onChange={handleChange} type="number" name="pricePurchasedAt" value={stock.pricePurchasedAt} required/>
-          <br/>
-        <label>Number of stock bought: </label>
-        <input onChange={handleChange} type="number" name="number" value={stock.number} required/>
-          <br/>
-        <label>Info: </label>
-        <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
-          <br/>
-        <label>Company: </label>
-        <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
-          <br/>
-        <input type="submit" value="Add Stock" />
-        <div>
-          <h5>Add a new stock here. If the company you want to add does not exist in the community database, it will be added it to the database.</h5>
-        </div>
-      </form>
-      <ul>
-        {errors}
-      </ul>
+  <div>
+    <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 400, width: 400, color: "#2a6592"}}>
+      <label>Name: </label>
+      <input onChange={handleChange} type="text" name="name" value={stock.name} required/>
+        <br/>
+      <label>Price purcahased at: </label>
+      <input onChange={handleChange} type="number" name="pricePurchasedAt" value={stock.pricePurchasedAt} required/>
+        <br/>
+      <label>Number of stock bought: </label>
+      <input onChange={handleChange} type="number" name="number" value={stock.number} required/>
+        <br/>
+      <label>Info: </label>
+      <input onChange={handleChange} type="text" name="info" value={stock.info} required/>
+        <br/>
+      <label>Company: </label>
+      <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
+        <br/>
+      <input type="submit" value="Add Stock" />
+      <div>
+        <h5>Add a new stock here. If the company you want to add does not exist in the community database, it will be added it to the database.</h5>
+      </div>
+    </form>
+    <ul>
+      {errors}
+    </ul>
   </div>
   )
 }
