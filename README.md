@@ -31,7 +31,7 @@ bundle install
 rails db:create
 rails db:migrate
 ```
-4. Seed data to the Server if you choose with:
+4. Seed data to the database if you choose with:
 
 ```bash
 rails db:seed
