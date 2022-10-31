@@ -25,7 +25,7 @@ I made this project because I find finance exciting. My favorite aspect of this 
 ```bash
 bundle install 
 ```
-3. Make sure the server and migrations for the data base are running with:
+3. Make sure the database and migrations for the data base are running with:
 
 ```bash
 rails db:create
