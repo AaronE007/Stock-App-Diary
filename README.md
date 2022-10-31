@@ -123,14 +123,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # React-App-for-Flatiron-Project
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
 
 ## Configuration
 Dependencies and all configuration is done in environment.rb. Your database is also set up here. DataMapper will use sqlite3 by default. By default the application uses the sqlite3-memory adapter (no configuration needed).
