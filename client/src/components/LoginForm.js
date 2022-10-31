@@ -25,13 +25,13 @@ const LoginForm = () => {
    })
     .then(res => res.json())
     .then(user => {
-        if (!user.errors) {
-          login(user)
-          navigate('/')
-        } else {
-          const errorsList = user.errors.map(e => <li>{e}</li>)
-          setErrors(errorsList)
-        }
+      if (!user.errors) {
+        login(user)
+        navigate('/')
+      } else {
+        const errorsList = user.errors.map(e => <li>{e}</li>)
+        setErrors(errorsList)
+      }
      })
   
     }

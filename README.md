@@ -6,13 +6,13 @@
 
 # Description
 
-This is a Rails based project for my Stock Buys Diary application. This project is a way to keep track of all of your stock buys. You can also view the company associated with the stocks purchased. On a community page on the application you can view all of the companies users are buying stocks from.  
+This is a Rails-based project for my Stock Buys Diary application. This project is a way to keep track of all of your stock buys. You can also view the company associated with the stocks purchased. On a community page on the application, you can view all of the companies users are buying stocks from.
 
-A user can sign up for the app and then log in and log out. The applicaiton is meant for many users to keep track of their own companies and stocks and see what other companies other users are adding. 
+A user can sign up for the app and then log in and log out. The application is meant for many users to keep track of their own companies and stocks and see what other companies other users are adding.
 
-Once a user decides on a stock they want to buy they can record it in their stocks diary form above their recorded stock buys. Here they can keep track of the stock's name, price purchased at, number of the stock bought at the time, information about the stock, and the company the stock is associated with. The user can also delete the stock from the list. If the user needs to edit the stock they can flip the card the stock is on and edit the information about the stock on the front of the card. 
+Once a user decides on a stock they want to buy they can record it in their stocks diary form above their recorded stock buys. Here they can keep track of the stock's name, price purchased, the number of the stock bought at the time, information about the stock, and the company the stock is associated with. The user can also delete the stock from the list. If the user needs to edit the stock they can flip the card the stock is on and edit the information about the stock on the front of the card.
 
-There is also a community companies list where a user can see what companies are popular to buy from. If a user creates a stock buy that has a company not yet in the community companies list, that company will be added to the list at the time of the creation of the stock. 
+There is also a community companies list where a user can see what companies are popular to buy from. If a user creates a stock buy that has a company not yet on the community companies list, that company will be added to the list at the time of the creation of the stock.
 
 I made this project because I find finance exciting. My favorite aspect of this application is that users can share the companies they are buying from while still keeping their individual stock buys private. The collective power of communal investing on the web has shown immense power lately. Happy trading!
 
