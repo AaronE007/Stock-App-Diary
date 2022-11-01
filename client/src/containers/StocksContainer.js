@@ -12,7 +12,7 @@ const StocksContainer = () => {
   return (
     <div>
       <h2>My Stock Buys Diary: </h2>
-      <StockForm/>
+      <StockForm mycompanies={mycompanies}/>
       <br/>
       <br/>
       <StocksList stocks={stocks}/>

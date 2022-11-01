@@ -42,6 +42,12 @@ const StockForm = () => {
      })
   }
 
+
+
+
+
+
+  
   return (
   <div>
     <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 400, width: 400, color: "#2a6592"}}>
@@ -65,7 +71,7 @@ const StockForm = () => {
         <br/>
       <input type="submit" value="Add Stock" />
         <div>
-          
+
         </div>
     </form>
   </div>

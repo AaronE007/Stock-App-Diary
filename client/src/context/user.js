@@ -121,7 +121,7 @@ function UserProvider({ children }) {
 
 
   return (
-    <UserContext.Provider value={{user, companies, stocks, loggedIn, login, logout, signup, addCompany, addStock, onUpdateStock, deleteStock}}>
+    <UserContext.Provider value={{user, companies, stocks, loggedIn, myCompanies, login, logout, signup, addCompany, addStock, onUpdateStock, deleteStock}}>
       {children}
     </UserContext.Provider>
   )
