@@ -28,6 +28,9 @@ const CompaniesForm = () => {
           <br/>
           <br/>
         <input type="submit" value="Add Company!" />
+        <div>
+          <h5>Add a company here. Companies added can be shared with all community investors!</h5>
+        </div>
       </form>
     </div>
   )
