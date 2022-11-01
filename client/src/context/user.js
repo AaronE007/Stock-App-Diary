@@ -7,7 +7,7 @@ function UserProvider({ children }) {
   const [companies, setCompanies] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
   const [stocks, setStocks] = useState([])
-  const [myCompanies, setMyComapanies] = useState([])
+  const [mycompanies, setMyComapanies] = useState([])
 
   useEffect(() => {
     fetch('/me')
@@ -22,7 +22,7 @@ function UserProvider({ children }) {
       }else {
         setLoggedIn(true)
         setStocks(data.stocks)
-        setMyComapanies(data.unique_companies)
+        cons(data.unique_companies)
         fetchCompanies()
       }
     })
@@ -121,7 +121,7 @@ function UserProvider({ children }) {
 
 
   return (
-    <UserContext.Provider value={{user, companies, stocks, loggedIn, myCompanies, login, logout, signup, addCompany, addStock, onUpdateStock, deleteStock}}>
+    <UserContext.Provider value={{user, companies, stocks, loggedIn, mycompanies, login, logout, signup, addCompany, addStock, onUpdateStock, deleteStock}}>
       {children}
     </UserContext.Provider>
   )

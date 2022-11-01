@@ -2,7 +2,7 @@ import { useState, useContext } from "react"
 import React  from 'react'
 import { UserContext } from "../context/user"
 
-const StockForm = () => {
+const StockForm = ({mycompanies}) => {
   const {addStock} = useContext(UserContext)
   const [stock, setStock] = useState({
     name: "", 
@@ -43,11 +43,9 @@ const StockForm = () => {
   }
 
 
+  const renderMyCompanies = mycompanies.map(c => <li>{c}</li>)
+ 
 
-
-
-
-  
   return (
   <div>
     <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 400, width: 400, color: "#2a6592"}}>
@@ -71,7 +69,7 @@ const StockForm = () => {
         <br/>
       <input type="submit" value="Add Stock" />
         <div>
-
+          {renderMyCompanies}
         </div>
     </form>
   </div>
