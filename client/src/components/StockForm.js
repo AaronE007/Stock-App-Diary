@@ -69,6 +69,7 @@ const StockForm = ({mycompanies}) => {
         <br/>
       <input type="submit" value="Add Stock" />
         <div>
+          <h4>My Companies Listed:</h4>
           {renderMyCompanies}
         </div>
     </form>
