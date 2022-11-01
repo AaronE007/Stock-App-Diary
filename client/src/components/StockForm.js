@@ -43,7 +43,7 @@ const StockForm = ({mycompanies}) => {
   }
 
 
-  const renderMyCompanies = mycompanies.map(c => <li>{c}</li>)
+  const renderMyCompanies = mycompanies.map(c => <li key={c.id}>{c.name}</li>)
  
 
   return (

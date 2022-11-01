@@ -21,8 +21,8 @@ function UserProvider({ children }) {
         setMyComapanies([])
       }else {
         setLoggedIn(true)
+        setMyComapanies(data.unique_companies)
         setStocks(data.stocks)
-        cons(data.unique_companies)
         fetchCompanies()
       }
     })
