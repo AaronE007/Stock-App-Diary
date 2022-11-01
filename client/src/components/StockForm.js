@@ -45,6 +45,9 @@ const StockForm = () => {
   return (
   <div>
     <form onSubmit={handleSubmit} style={{margin: "auto", border: "solid", backgroundColor: "#8ec3eb" , height: 400, width: 400, color: "#2a6592"}}>
+      <div>
+        <h5>Add a new stock here. If the company you want to add does not exist in the community database, it will be added it to the database.</h5>
+      </div>
       <label>Name: </label>
       <input onChange={handleChange} type="text" name="name" value={stock.name} required/>
         <br/>
@@ -61,9 +64,9 @@ const StockForm = () => {
       <input onChange={handleChange} type="text" name="company" value={stock.company} required/>
         <br/>
       <input type="submit" value="Add Stock" />
-      <div>
-        <h5>Add a new stock here. If the company you want to add does not exist in the community database, it will be added it to the database.</h5>
-      </div>
+        <div>
+          
+        </div>
     </form>
   </div>
   )

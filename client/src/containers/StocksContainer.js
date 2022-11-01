@@ -7,6 +7,8 @@ const StocksContainer = () => {
     
   const {stocks} = useContext(UserContext)
 
+  const {mycompanies} = useContext(UserContext)
+
   return (
     <div>
       <h2>My Stock Buys Diary: </h2>
