@@ -7,7 +7,7 @@ function UserProvider({ children }) {
   const [companies, setCompanies] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
   const [stocks, setStocks] = useState([])
-  const [mycompanies, setMyComapanies] = useState([])
+  const [mycompanies, setMyCompanies] = useState([])
 
   useEffect(() => {
     fetch('/me')
@@ -18,10 +18,10 @@ function UserProvider({ children }) {
         setLoggedIn(false)
         setStocks([])
         setCompanies([])
-        setMyComapanies([])
+        setMyCompanies([])
       }else {
         setLoggedIn(true)
-        setMyComapanies(data.unique_companies)
+        setMyCompanies(data.unique_companies)
         setStocks(data.stocks)
         fetchCompanies()
       }
@@ -53,10 +53,12 @@ function UserProvider({ children }) {
     setStocks([...stocks, stock])
     if (!checkCompanyExists(stock)) {
       setCompanies([...companies, stock.company])
+      setMyCompanies([...mycompanies, stock.company])
     }
+   
   }
 
-
+ 
   const checkCompanyExists = (stock) => {
     return companies.some((company) => { 
      return company.name === stock.company.name

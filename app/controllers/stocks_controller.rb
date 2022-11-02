@@ -12,7 +12,7 @@ class StocksController < ApplicationController
   end
 
   def update
-   if  stock = Stock.find(params[:id])
+   if  stock = current_user.stocks.find(params[:id])
     stock.update!(stock_params)
     stock.reload
     render json: stock
@@ -23,7 +23,7 @@ class StocksController < ApplicationController
 
   
   def destroy
-    stock = Stock.find(params[:id])
+    stock = current_user.stocks.find(params[:id])
     stock.destroy
     render json: {message: "Stock deleted"}
   end  
