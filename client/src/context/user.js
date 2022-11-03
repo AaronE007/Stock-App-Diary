@@ -95,6 +95,7 @@ function UserProvider({ children }) {
     setLoggedIn(true)
     fetchCompanies()
     setStocks(user.stocks)
+    setMyCompanies(user.unique_companies)
   }
 
   const logout = () => {
@@ -106,6 +107,7 @@ function UserProvider({ children }) {
     setUser(user)
     setLoggedIn(true)
     fetchCompanies()
+    setMyCompanies([])
     setStocks([{
       "id": 1,
       "name": "Sample Stock",
