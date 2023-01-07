@@ -28,6 +28,8 @@ class StocksController < ApplicationController
     render json: {message: "Stock deleted"}
   end  
 
+
+
   private 
 
   def stock_params
