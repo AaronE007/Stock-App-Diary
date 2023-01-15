@@ -3,7 +3,7 @@ import {UserContext} from "../context/user";
 
 const CompaniesForm = () => {
   const [name, setName] = useState("")
-  const [description, setDescription] = useState("")
+  const [amount, setAmount] = useState("")
   const {addCompany} = useContext(UserContext)
 
 
@@ -11,7 +11,7 @@ const CompaniesForm = () => {
     e.preventDefault()
     addCompany({
       name: name,
-      description: description
+      amount: amount
     })
   }
 
@@ -23,13 +23,13 @@ const CompaniesForm = () => {
         <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required/>
           <br/>
           <br/>
-        <label>Description: </label>
-        <input type="text" id="description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
+        <label>Amount: </label>
+        <input type="text" id="description" value={amount} onChange={(e) => setAmount(e.target.value)} required/>
           <br/>
           <br/>
-        <input type="submit" value="Add Company!" />
+        <input type="submit" value="Add Income!" />
         <div>
-          <h5>Add a company here. Companies added can be shared with all community investors!</h5>
+          <h5>Add income here.</h5>
         </div>
       </form>
     </div>
